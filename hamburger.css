@@ -1,0 +1,280 @@
+*{
+    margin:0; padding:0;
+    color:#f2f5f7;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+nav{
+    height: 6rem;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    background-color: #053705;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.2);
+}
+
+/* Styling Logo*/
+
+.logo{
+    padding: 3vh 3vw;
+    text-align: left;
+    width: 20vw;
+}
+
+.logo img{
+    height: auto;
+    width: 4rem;
+}
+
+/* Styling Navigation Links*/
+
+.nav-links{
+    width: 80vw;
+    display: flex;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: none;
+    list-style: none;
+    font-weight: 600;
+}
+
+.nav-links li a{
+    margin: 0 0.7vw;
+    text-decoration: none;
+    transition: all ease-in-out 350ms;
+    padding: 10px;
+}
+
+.nav-links li a:hover{
+    color:#000;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links li a:hover::before{
+    width: 80%;
+}
+.dropdown {
+    background-color: #053705;
+    position: absolute;
+    padding: 1em 0;
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+}
+
+/*Buttons Styling*/
+
+.donate-button{
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size:1rem;
+    cursor:pointer;
+    background-color: transparent;
+    border:1.5px solid #f2f5f7;
+    border-radius: 2em;
+}
+
+.donate-button:hover{
+    color:#fff;
+    background-color: #dd5f24;
+    border:1.5px solid #dd5f24;
+    transition: all ease-in-out 350ms;
+}
+
+/*Navigation Icon Styling*/
+
+.hamburger div{
+    width: 30px;
+    height: 3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger{
+    display: none;
+}
+
+
+/*Responsive Adding Media Queries*/
+
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        background: #053705;
+        position: fixed;
+        opacity: 1;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+
+    li.fade{
+        opacity: 1;
+    }
+
+    /* Navigation Bar Icon on Click*/
+
+        .toggle .bars1{
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .toggle .bars2{
+            transition: all 0s ease;
+            width: 0;
+        }
+
+        .toggle .bars3{
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: #eee;
+    color: #fff;
+    font-family: sans-serif;
+}
+p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: black;
+    text-align: center;
+    margin: 10px;
+}
+.about {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.work-row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.work-col {
+    flex-basis: 31%;
+    background-image: url(images/homes.jpg);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transform: 0.5s;
+    font-size: 20px;
+}
+@media(max-width: 700px) {
+    .work-row {
+        flex-direction: column;
+    }
+}
+.diff-btn {
+    font-size: 13px;
+    padding: 12px 34px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.diff-btn:hover {
+    border: 1px solid #053705;
+    transition: 1s;
+    background: #053705;
+}
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/homes.jpg);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
